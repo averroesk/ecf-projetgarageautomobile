@@ -1,20 +1,61 @@
--- Version du serveur : 10.4.28-MariaDB
--- Version de PHP : 8.2.4
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
 --
 -- Base de données : `garage_v_parrot`
+-- 
+-- CREATE DATABASE IF NOT EXISTS garage_v_parrot 
+
+-- --------------------------------------------------------
+
 --
-/* CREATE DATABASE IF NOT EXISTS garage_v_parrot */
+-- Structure de la table `horaires_ouverture`
+--
+
+CREATE TABLE `horaires_ouverture` (
+  `id` int(11) NOT NULL,
+  `nom_jour` varchar(255) NOT NULL,
+  `horaires_matin` varchar(255) NOT NULL,
+  `horaires_soir` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `horaires_ouverture`
+--
+
+INSERT INTO `horaires_ouverture` (`id`, `nom_jour`, `horaires_matin`, `horaires_soir`) VALUES
+(1, 'Lundi', '11:00 - 12:00', '14:00 - 18:00'),
+(2, 'Mardi', '10:00 - 12:00', '14:00 - 18:00'),
+(3, 'Mercredi', '09:45 - 12:00', '14:00 - 18:00'),
+(4, 'Jeudi', '08:45 - 12:00', '14:00 - 18:00'),
+(5, 'Vendredi', '09:45 - 12:00', '14:00 - 18:00'),
+(6, 'Samedi', '08:45 - 12:00', '14:00 - 18:00'),
+(7, 'Dimanche', 'Fermé', '');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `utilisateurs`
+--
+
+CREATE TABLE `utilisateurs` (
+  `id` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `prenom` varchar(255) NOT NULL,
+  `nom` varchar(255) NOT NULL,
+  `role` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `utilisateurs`
+--
+
+INSERT INTO `utilisateurs` (`id`, `email`, `password`, `prenom`, `nom`, `role`) VALUES
+(1, 'vincentparrot@test.com', '$2y$10$D6T.LhIAHAG81Ek0l4aaneI2BgrsI4ft3R7XCHfKgKgglMjh63xdq', 'Vincent', 'PARROT', 'admin'),
+(4, 'jeandupont@test.com', '$2y$10$/PDSKfXy/TOYTsLZPcOhTOsTR/43K9bAyO5eJIaueZpQWvMfdSIBm', 'Jean', 'Dupont', 'employe');
+
 -- --------------------------------------------------------
 
 --
@@ -50,6 +91,18 @@ INSERT INTO `vehicules_occasion` (`id`, `image_voiture`, `titre_voiture`, `prix_
 --
 
 --
+-- Index pour la table `horaires_ouverture`
+--
+ALTER TABLE `horaires_ouverture`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `utilisateurs`
+--
+ALTER TABLE `utilisateurs`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `vehicules_occasion`
 --
 ALTER TABLE `vehicules_occasion`
@@ -60,12 +113,21 @@ ALTER TABLE `vehicules_occasion`
 --
 
 --
+-- AUTO_INCREMENT pour la table `horaires_ouverture`
+--
+ALTER TABLE `horaires_ouverture`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT pour la table `utilisateurs`
+--
+ALTER TABLE `utilisateurs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT pour la table `vehicules_occasion`
 --
 ALTER TABLE `vehicules_occasion`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
