@@ -1,6 +1,6 @@
 #### Démarches à suivre pour l’exécution en local:
 
-1. Installer Xampp
+1. Installer Xampp 8.2.4-0
 2. Cloner repository dans '/opt/lampp/htdocs'
 3. Lancer serveur Apache et MySQL
 4. Faire les modifications nécesssaires dans 'lib/config.php'
