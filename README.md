@@ -1,7 +1,7 @@
 #### Démarches à suivre pour l’exécution en local:
 
 1. Installer Xampp
-2. Cloner repository dans '/opt/lampp/htdocs' (sous linux)
+2. Cloner repository dans '/opt/lampp/htdocs'
 3. Lancer serveur Apache et MySQL
 4. Faire les modifications nécesssaires dans 'lib/config.php'
 5. Entrer l’url: http://localhost/dashboard
