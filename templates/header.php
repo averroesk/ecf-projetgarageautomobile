@@ -1,5 +1,11 @@
 <?php
 
+	$sql = "SELECT * FROM horaires_ouverture";
+	$query = $pdo->prepare($sql);
+  $query->execute();
+  $result = $query->fetchAll(PDO::FETCH_ASSOC);
+	$jours = $result; 
+
 	$mainMenu = [
 		  'index.php' => 'Accueil',
 		  'vehicules-occasion.php' => 'Acheter un véhicule',

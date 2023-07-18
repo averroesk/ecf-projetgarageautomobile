@@ -1,4 +1,11 @@
-<?php require_once __DIR__ . "/templates/header.php" ?>
+<?php 
+	
+		require_once __DIR__ . "/lib/config.php";
+		require_once __DIR__ . "/lib/pdo.php";
+	
+	require_once __DIR__ ."/templates/header.php" 
+
+?>
 			
 			<div class="container-fluid">
 

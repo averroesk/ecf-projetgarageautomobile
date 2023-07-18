@@ -1,5 +1,7 @@
 </main>
 		
+		
+		 
 		<footer class="container-fluid bg-secondary pt-5 mt-4">
 			
 			<div class="row justify-content-center">
@@ -7,40 +9,23 @@
     		  	<table class="table table-borderless text-light caption-top">
     		            <caption class="text-light fs-5 ms-1 mb-2">Horaires d'ouverture</caption>
                         <tbody>
-                            <tr>
-                                <td>Lundi</td>
-                                <td>08:45 - 12:00</td>
-                                <td>14:00 - 18:00</td>
-                            </tr>
-                            <tr>
-                                <td>Mardi</td>
-                                <td>08:45 - 12:00</td>
-                                <td>14:00 - 18:00</td>
-                            </tr>
-                            <tr>
-                                <td>Mercredi</td>
-                                <td>08:45 - 12:00</td>
-                                <td>14:00 - 18:00</td>
-                            </tr>
-                            <tr>
-                                <td>Jeudi</td>
-                                <td>08:45 - 12:00</td>
-                                <td>14:00 - 18:00</td>
-                            </tr>
-                            <tr>
-                                <td>Vendredi</td>
-                                <td>08:45 - 12:00</td>
-                                <td>14:00 - 18:00</td>
-                            </tr>
-                            <tr>
-                                <td>Samedi</td>
-                                <td>08:45 - 12:00</td>
-                                <td>14:00 - 18:00</td>
-                            </tr>
-                            <tr>
-                                <td>Dimanche</td>
-                                <td colspan="2">Fermé</td>
-                            </tr>
+                        
+                       <?php
+                        
+                        	foreach ($jours as $key => $jour) {
+                        			echo ("
+		                      			<tr>
+		                              <td>".htmlentities($jour['nom_jour'])."</td>
+		                              <td>".htmlentities($jour['horaires_matin'])."</td>
+		                              <td>".htmlentities($jour['horaires_soir'])."</td>
+                            		</tr>
+                        			"); 
+
+                        		} 
+                        	
+                        ?> 
+                           
+                           
                         </tbody>
                     </table>	 
                 </div>

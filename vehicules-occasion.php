@@ -3,12 +3,11 @@
 		require_once __DIR__ . "/lib/config.php";
 		require_once __DIR__ . "/lib/pdo.php";
 	
-    $sql = "SELECT * FROM vehicules_occasion";
+    $sql = "SELECT * FROM horaires_ouverture";
 		$query = $pdo->prepare($sql);
     $query->execute();
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
-
-		$cars = $result;
+		$jours = $result; 
 	
 		require_once __DIR__ . "/templates/header.php"
 	
