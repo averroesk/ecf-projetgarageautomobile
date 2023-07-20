@@ -6,7 +6,8 @@
 
 	$adminMenu = [
 		  'index.php' => 'Accueil',
-		  'approuver.php' => 'Approuver commentaires clients'
+		  'approuver.php' => 'Approuver commentaires clients',
+		  'ajouter-voitures.php' => 'Ajouter une nouvelle voiture'
 	];
 
 ?>
@@ -24,7 +25,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 		<link rel="stylesheet" href="../style.css">
 		
-    <title>Employé Garage V. Parrot</title>
+    <title>Compte employé Garage V. Parrot</title>
 </head>
 
 

@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../style.css">
 
-    <title>Admin Garage V. Parrot</title>
+    <title>Compte administrateur Garage V. Parrot</title>
 </head>
 
 

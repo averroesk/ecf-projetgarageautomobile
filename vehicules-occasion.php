@@ -3,11 +3,11 @@
 		require_once __DIR__ . "/lib/config.php";
 		require_once __DIR__ . "/lib/pdo.php";
 	
-    $sql = "SELECT * FROM horaires_ouverture";
+    $sql = "SELECT * FROM vehicules_occasion";
 		$query = $pdo->prepare($sql);
     $query->execute();
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
-		$jours = $result; 
+		$cars = $result; 
 	
 		require_once __DIR__ . "/templates/header.php"
 	
@@ -55,37 +55,41 @@
 					<article id="cars-show" class="row mt-5">
 					    
 					    <?php
+					    
+					    	//var_dump($cars);
 					    	
-								foreach ($cars as $key => $car) {
+					    	if (!$carsFiltered) { 
+									foreach ($cars as $key => $car) {
 											
-											echo ("
-														 <div class='col-md-4'>
-																<div class='card rounded-4 m-3'>
-																	<img
-																		src=images/images-vehicules/".$car['image_voiture']." 
-																		style='opacity: 0.7; height: 100%; width: auto;'
-																		class='card-img-top'
-																		alt='Image voiture'>
-																	<div class='card-body'>
-																		<h2 class='card-title text-center'>".$car['titre_voiture']."</h2>
-																		<div class='card-text fw-semibold' style='opacity: 0.8'>
-																			<p>
-																				Prix: ".$car['prix_voiture']." €
-																			</p> 
-																			<p>
-																				Année de mise en circulation: ".$car['annee_voiture']."
-																			</p>
-																			<p>
-																				Kilométrage: ".$car['km_voiture']." km 
-																			</p>
-																		</div>
-																		<div class='text-center'>
-																				<button type='button' class='btn btn-secondary'>Détails</button>
+												echo ("
+															 <div class='col-md-4'>
+																	<div class='card rounded-4 m-3'>
+																		<img
+																			src=images/images-vehicules/".htmlentities($car['image_voiture'])." 
+																			style='opacity: 0.7; height: 100%; width: auto;'
+																			class='card-img-top'
+																			alt='Image voiture'>
+																		<div class='card-body'>
+																			<h2 class='card-title text-center'>".htmlentities($car['titre_voiture'])."</h2>
+																			<div class='card-text fw-semibold' style='opacity: 0.8'>
+																				<p>
+																					Prix: ".$car['prix_voiture']." €
+																				</p> 
+																				<p>
+																					Année de mise en circulation: ".htmlentities($car['annee_voiture'])."
+																				</p>
+																				<p>
+																					Kilométrage: ".htmlentities($car['km_voiture'])." km 
+																				</p>
+																			</div>
+																			<div class='text-center'>
+																					<button type='button' class='btn btn-secondary'>Détails</button>
+																			</div>
 																		</div>
 																	</div>
-																</div>
-															</div> 
-													");
+																</div> 
+														");
+										}
 									} 							
 					    
 					    ?>

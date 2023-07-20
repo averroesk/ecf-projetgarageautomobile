@@ -32,7 +32,7 @@
     
     $res = addUser($pdo, $_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['password']);
     if ($res) {
-        $messages[] = "Compte employé enregistré.";
+        $messages[] = "Compte employé ajouté.";
     } else {
         $errors[] = "Une erreur s'est produite lors de l'enregistrement.";
     }

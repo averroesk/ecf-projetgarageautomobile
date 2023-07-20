@@ -42,29 +42,29 @@
 		  $query->execute();
 		  $result = $query->fetchAll(PDO::FETCH_ASSOC); 
 		 
-		$cars = $result;
+		$carsFiltered = $result;
 	
-		foreach ($cars as $key => $car) {
+		foreach ($carsFiltered as $key => $car) {
 											
 												echo ("
-															 <div class='col-md-4'>
+															 <div class='col-md-4 h-100'>
 																	<div class='card rounded-4 m-3'>
 																		<img
-																			src=images/images-vehicules/".$car['image_voiture']." 
+																			src=images/images-vehicules/".htmlentities($car['image_voiture'])." 
 																			style='opacity: 0.7; height: 100%; width: auto;'
 																			class='card-img-top'
 																			alt='Image voiture'>
 																		<div class='card-body'>
-																			<h2 class='card-title text-center'>".$car['titre_voiture']."</h2>
+																			<h2 class='card-title text-center'>".htmlentities($car['titre_voiture'])."</h2>
 																			<div class='card-text fw-semibold' style='opacity: 0.8'>
 																				<p>
-																					Prix: ".$car['prix_voiture']." €
+																					Prix: ".htmlentities($car['prix_voiture'])." €
 																				</p> 
 																				<p>
-																					Année de mise en circulation: ".$car['annee_voiture']."
+																					Année de mise en circulation: ".htmlentities($car['annee_voiture'])."
 																				</p>
 																				<p>
-																					Kilométrage: ".$car['km_voiture']." km 
+																					Kilométrage: ".htmlentities($car['km_voiture'])." km 
 																				</p>
 																			</div>
 																			<div class='text-center'>
