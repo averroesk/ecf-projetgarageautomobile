@@ -15,5 +15,9 @@
 #### Se connecter à un exemple de compte employé:
 - Email: jeandupont@test.com
 - Mot de passe: jeandupont
+
+#### Autorisation upload image voiture à partir du compte employé:
+Si l'upload ne fonctionne pas il faut autoriser les droits d'accès au dossier 'images-vehicules' avec la commande: \
+chmod -R 777 images-vehicules/
   
 
