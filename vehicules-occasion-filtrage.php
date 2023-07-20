@@ -55,7 +55,7 @@
 																			class='card-img-top'
 																			alt='Image voiture'>
 																		<div class='card-body'>
-																			<h2 class='card-title text-center'>".htmlentities($car['titre_voiture'])."</h2>
+																			<h2 class='card-title text-center mb-3'>".htmlentities($car['titre_voiture'])."</h2>
 																			<div class='card-text fw-semibold' style='opacity: 0.8'>
 																				<p>
 																					Prix: ".htmlentities($car['prix_voiture'])." €
@@ -67,9 +67,7 @@
 																					Kilométrage: ".htmlentities($car['km_voiture'])." km 
 																				</p>
 																			</div>
-																			<div class='text-center'>
-																					<button type='button' class='btn btn-secondary'>Détails</button>
-																			</div>
+																			
 																		</div>
 																	</div>
 																</div> 
