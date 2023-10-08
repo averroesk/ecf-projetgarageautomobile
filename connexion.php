@@ -1,42 +1,42 @@
-<?php require_once __DIR__ . "/lib/config.php" ?>
-<?php require_once __DIR__ . "/lib/pdo.php" ?>
-<?php require_once __DIR__ . "/lib/session.php" ?>
-<?php require_once __DIR__ . "/templates/header.php" ?>
 
 <?php
 
-		function verifyUserLoginPassword(PDO $pdo, string $email, string $password) {
-    $query = $pdo->prepare("SELECT * FROM utilisateurs WHERE email = :email");
-    $query->bindParam(':email', $email, PDO::PARAM_STR);
-    $query->execute();
-    $user = $query->fetch(); 
+	require_once __DIR__ . "/lib/config.php"; 
+ 	require_once __DIR__ . "/lib/pdo.php"; 
+	require_once __DIR__ . "/lib/session.php"; 
+	require_once __DIR__ . "/templates/header.php"; 
 
-    if ($user && password_verify($password, $user['password'])) {
-        return $user;
-    } else {
-        return false;
-    }
-  } 
+		function verifyCredentials(PDO $pdo, string $email, string $password) {
+		  $query = $pdo->prepare("SELECT * FROM utilisateurs WHERE email = :email");
+		  $query->bindParam(':email', $email, PDO::PARAM_STR);
+		  $query->execute();
+		  $user = $query->fetch(); 
+
+		  if ($user && password_verify($password, $user['password'])) {
+		      return $user;
+		  } else {
+		      return false;
+		  }
+  	} 
 
 $errors = [];
 
-if (isset($_POST['loginUser'])) {
 
-   	$user = verifyUserLoginPassword($pdo, $_POST['email'], $_POST['password']); 
-
-    if ($user) {
-        session_regenerate_id(true);
-        $_SESSION['user'] = $user;
-        if ($user['role'] === 'admin') {
-            header('location: admin/index.php');
-        } else {
-        		header('location: employe/index.php');
-        }
-    } else {
-        $errors[] = 'Email ou mot de passe incorrect';
-    }
-
-  }
+		if (isset($_POST['loginUser'])) {
+		 	$user = verifyCredentials($pdo, $_POST['email'], $_POST['password']); 
+		  if ($user) {
+		      session_regenerate_id(true);
+		      $_SESSION['user'] = $user;
+		      if ($user['role'] === 'admin') {
+		          header('location: admin/index.php');
+		      } else {
+		      		header('location: employe/index.php');
+		      }
+		  } else {
+		      $errors[] = 'Email ou mot de passe incorrect';
+		  }
+		}
+		
 
 ?>
 			

@@ -10,20 +10,23 @@
 	$errors = [];
 	$messages = [];
 	
-	function addUser(PDO $pdo, string $prenom, string $nom, string $email, string $password, $role = "employe") {
-    $sql = "INSERT INTO utilisateurs (prenom, nom, email, password, role) VALUES (:prenom, :nom, :email, :password, :role);";
+	
+	function addUser(PDO $pdo, string $prenom, 
+									string $nom, string $email, 
+									string $password, $role = "employe") 
+	{
+  	$sql = ("INSERT INTO utilisateurs (prenom, nom, email, password, role)
+  	 				VALUES (:prenom, :nom, :email, :password, :role);");
     $query = $pdo->prepare($sql);
-
     $password = password_hash($password, PASSWORD_DEFAULT);
-
     $query->bindParam(':prenom', $prenom, PDO::PARAM_STR);
     $query->bindParam(':nom', $nom, PDO::PARAM_STR);
     $query->bindParam(':email', $email, PDO::PARAM_STR);
     $query->bindParam(':password', $password, PDO::PARAM_STR);
     $query->bindParam(':role', $role, PDO::PARAM_STR);
-    
     return $query->execute();
-}
+	}
+
 	
 	if (isset($_POST['addUser'])) {
     /*

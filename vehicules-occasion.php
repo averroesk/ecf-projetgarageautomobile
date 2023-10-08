@@ -2,6 +2,8 @@
 	
 		require_once __DIR__ . "/lib/config.php";
 		require_once __DIR__ . "/lib/pdo.php";
+		
+		$carsFiltered = null;
 	
     $sql = "SELECT * FROM vehicules_occasion";
 		$query = $pdo->prepare($sql);
@@ -59,8 +61,8 @@
 					    	//var_dump($cars);
 					    	
 					    	if (!$carsFiltered) { 
-									foreach ($cars as $key => $car) {
-											
+					    	
+									foreach ($cars as $key => $car) {			
 												echo ("
 															 <div class='col-md-4'>
 																	<div class='card rounded-4 m-3'>
@@ -88,6 +90,7 @@
 																</div> 
 														");
 										}
+										
 									} 							
 					    
 					    ?>
@@ -148,7 +151,7 @@
 										
 									});
 								});
-						});
+							});
             
         </script>
 			

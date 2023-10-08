@@ -1,16 +1,22 @@
 <?php 
 	
-		require_once __DIR__ . "/lib/config.php";
-		require_once __DIR__ . "/lib/pdo.php";
+	require_once __DIR__ . "/lib/config.php";
+	require_once __DIR__ . "/lib/pdo.php";
 	
-	require_once __DIR__ ."/templates/header.php" 
-
+	require_once __DIR__ ."/templates/header.php"; 
+	
+	$sql = "SELECT * FROM services";
+	$query = $pdo->prepare($sql);
+  $query->execute();
+  $result = $query->fetchAll(PDO::FETCH_ASSOC);
+	$services = $result; 
+	
 ?>
 			
-			<div class="container-fluid">
+			<div class="container-fluid"> 
 
 				<div class="row">
-					<h1 class="text-center mt-4 mb-2 fs-3">Bienvenue au garage V. Parrot !</h1>
+					<h1 class="text-center mt-4 mb-2 fs-3">Bienvenue au garage V. Parrot !</h1> 
 					
 					<!-- Carrousel -->
 					 <div id="carouselExampleIndicators" class="carousel slide col-md-4 my-4" style="margin: auto">
@@ -55,9 +61,10 @@
 					
 					<h2 class="mb-3 mt-5 col-md-9" style="margin: auto">Présentation des services</h2>
 					<section class="my-4 col-md-9" style="margin: auto">
-					    <h3>Service de réparation de véhicules</h3>
+							<!-- <h3>Service de réparation de véhicules</h3> -->
+					    <h3> <?=$services[0]['titre_service'] ?> </h3>
 					    <article class="mb-4 mt-4">
-						    <h4>Article 1</h4>
+						    <h4> <?=$services[0]['titre1'] ?> </h4>
 							<img
 								class="img-1-a-propos"
 								src="./images/images-vehicules/reparation-vehicules.jpg" 
@@ -65,7 +72,7 @@
 								height="300vh" 
 								width="auto" 
 							/>
-							<p>
+							<!-- <p>
 								Integer ornare a mauris eget lobortis. Praesent sapien risus, pharetra a justo id,
 								volutpat ultrices diam. Sed felis lectus, egestas non justo et, lobortis gravida
 								justo. Ut sed odio sollicitudin, consectetur mauris sit amet, egestas leo.
@@ -77,11 +84,14 @@
 								Curabitur rutrum erat libero, et semper erat consectetur vitae. Integer porttitor
 								leo nec mauris pharetra, in luctus diam volutpat. Aliquam mollis iaculis nisl a lacinia.
 								Sed eget elementum nibh. Sed sed tincidunt dui. Duis ut fringilla augue.
+							</p> -->
+							<p>
+								<?=$services[0]['paragraphe1'] ?>
 							</p>
 						</article>
 						<article>
-							<h4>Article 2</h4>
-							<p>
+							<h4> <?=$services[0]['titre2'] ?> </h4>
+							<!-- <p>
 								Maecenas eu mauris vel nibh tempus faucibus. Integer in accumsan magna.
 								Nam quis lacinia elit. Proin consequat pellentesque odio in rutrum.
 								Donec eu aliquet nunc. Pellentesque ut arcu justo. Duis ut nulla nibh.
@@ -90,13 +100,17 @@
 								felis sollicitudin non. Vestibulum in nulla porta, consequat nisi a,
 								porta ipsum. Sed quis mi a mi pharetra dapibus id ac felis. Integer
 								viverra varius elit a pharetra.
+							</p> -->
+							<p>
+								<?=$services[0]['paragraphe2'] ?>
 							</p>
 						</article>
 					</section>
 					<section class="my-4 col-md-9" style="margin: auto">
-					    <h3>Service d'entretien de véhicules</h3>
+							<!-- <h3>Service d'entretien de véhicules</h3> -->
+					    <h3> <?=$services[1]['titre_service'] ?> </h3>
 					    <article class="mb-4 mt-4">
-						    <h4>Article 1</h4>
+						    <h4> <?=$services[1]['titre1'] ?> </h4>
 							<img
 								class="img-2-a-propos"
 								src="./images/images-vehicules/entretien-vehicules.jpg" 
@@ -104,7 +118,7 @@
 								height="330vh" 
 								width="auto" 
 							/>
-							<p>
+							<!-- <p>
 								Sed ut ante at lorem feugiat sagittis. Orci varius natoque penatibus et
 								magnis dis parturient montes, nascetur ridiculus mus. Phasellus posuere
 								est a magna feugiat consequat. Nam id tortor quis est tempus tempor. Sed 
@@ -113,11 +127,14 @@
 								fringilla velit. Sed sit amet quam non leo tempor venenatis. Quisque facilisis,
 								purus commodo eleifend bibendum, lacus lorem tincidunt augue, eu ullamcorper
 								nisl purus a orci. In hac habitasse platea dictumst.
+							</p> -->
+							<p>
+								<?=$services[1]['paragraphe1'] ?>
 							</p>
 						</article>
 						<article>
-							<h4>Article 2</h4>
-							<p>
+							<h4> <?=$services[1]['titre2'] ?> </h4>
+							<!-- <p>
 								Aenean risus purus, accumsan id rhoncus nec, commodo quis neque.
 								Sed ullamcorper quam nec lectus rhoncus pellentesque. Vivamus mattis
 								quam nibh, nec mollis orci fringilla et. Vivamus quis porttitor orci.
@@ -129,13 +146,17 @@
 								urna porta at. Etiam sem diam, vehicula eu hendrerit in, finibus sit
 								amet ex. Nunc sed eros sagittis, dictum libero et, egestas metus.
 								Maecenas vestibulum augue vitae lobortis ullamcorper.
+							</p> -->
+							<p>
+								<?=$services[1]['paragraphe2'] ?>
 							</p>
 						</article>
 					</section>
 					<section class="my-4 col-md-9" style="margin: auto">
-					    <h3>Service d'achat de véhicules d'occasion</h3>
+					    <!-- <h3>Service d'achat de véhicules d'occasion</h3> -->
+					    <h3> <?=$services[2]['titre_service'] ?> </h3>
 					    <article class="mb-4 mt-4">
-						    <h4>Article 1</h4>
+						    <h4> <?=$services[2]['titre1'] ?> </h4>
 							<img
 								class="img-1-a-propos"
 								src="./images/images-vehicules/achat-vehicules.jpg" 
@@ -143,7 +164,7 @@
 								height="300vh" 
 								width="auto" 
 							/>
-							<p>
+							<!-- <p>
                                 Cras pretium dignissim tellus. Aliquam a finibus sem, et mollis mi. 
                                 Maecenas faucibus urna non tellus cursus, eget dictum libero tempor. 
                                 Praesent quis fermentum elit. Integer bibendum, tellus eu imperdiet pharetra, 
@@ -155,11 +176,14 @@
                                 odio porttitor fermentum fermentum. Duis nisi augue, sodales a est sed, feugiat
                                 pulvinar lorem. Praesent congue convallis nunc in auctor. Sed sed euismod sem,
                                 at volutpat urna.
-                            </p>
+                            </p> -->
+              <p>
+              	<?=$services[2]['paragraphe1'] ?>
+              </p>
 						</article>
 						<article>
-							<h4>Article 2</h4>
-							<p>
+							<h4> <?=$services[2]['titre2'] ?> </h4>
+							<!-- <p>
 							    Sed fermentum fringilla arcu, accumsan tempus ligula feugiat quis. Nam lacinia
 							    scelerisque lectus, at hendrerit leo auctor vitae. Mauris tempus mauris a 
 							    dignissim euismod. Duis ut dolor aliquet quam dignissim viverra quis at risus.
@@ -170,6 +194,9 @@
 							    turpis id ante elementum posuere eget id lectus. Donec aliquet volutpat mi, a 
 							    sodales diam rhoncus sed. Nam sed justo feugiat neque molestie pulvinar. 
 							    Integer at nisl ac risus luctus congue. Sed dignissim mattis convallis.
+							</p> -->
+							<p>
+								<?=$services[2]['paragraphe2'] ?>
 							</p>
 						</article>
 					</section>
@@ -207,7 +234,7 @@
                     rating: 0
                 });
             }); 
-        </script>
+        </script> 
 			
 <?php require_once __DIR__ . "/templates/footer.php" ?>
 

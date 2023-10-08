@@ -14,18 +14,22 @@
 					
 					<!-- Formulaire de contact -->
 					<form class="col-md-6 my-5 m-auto">
+					
 						<div class="mb-4">
 							<label for="lastname" class="form-label">Entrez votre nom</label>
 							<input type="text" class="form-control" id="lastname" name="lastname">
 						</div>
+						
 						<div class="mb-4">
 							<label for="firstname" class="form-label">Entrez votre prénom</label>
 							<input type="text" class="form-control" id="firstname" name="firstname">
 						</div>
+						
 						<div class="mb-4">
 							<label for="email" class="form-label">Entrez votre adresse e-mail</label>
 							<input type="email" class="form-control" id="email" name="email">	    
 						</div>
+						
 						<div class="mb-4">
 							<label for="phone" class="form-label">Entrez votre numéro de téléphone</label>
 							<input type="tel" class="form-control" id="phone" name="phone">

@@ -13,15 +13,18 @@
 	
 	
 	$messages = [];
-	if (isset($_POST['enregistrer'])) {
-		$sql = "UPDATE horaires_ouverture SET horaires_matin = :horaires_matin, horaires_soir = :horaires_soir WHERE nom_jour = :nom_jour"; 
-				$query = $pdo->prepare($sql);
-				$query->bindValue(":horaires_matin", $_POST['horaires_matin'], PDO::PARAM_STR);
-				$query->bindValue(":horaires_soir", $_POST['horaires_soir'], PDO::PARAM_STR);
-				$query->bindValue(":nom_jour", $_POST['nom_jour'], PDO::PARAM_STR); 
-				$query->execute(); 
-				
-		}
+	
+	if (isset($_POST['enregistrer'])) 
+	{
+		$sql = ("UPDATE horaires_ouverture 
+						SET horaires_matin = :horaires_matin, horaires_soir = :horaires_soir 
+						WHERE nom_jour = :nom_jour"); 
+		$query = $pdo->prepare($sql);
+		$query->bindValue(":horaires_matin", $_POST['horaires_matin'], PDO::PARAM_STR);
+		$query->bindValue(":horaires_soir", $_POST['horaires_soir'], PDO::PARAM_STR);
+		$query->bindValue(":nom_jour", $_POST['nom_jour'], PDO::PARAM_STR); 
+		$query->execute(); 			
+	}
 	
 	require_once __DIR__ . "/templates/header.php"; 
 
@@ -30,7 +33,7 @@
 <div class="mt-2 text-left">
   <h1 class="display-5 text-body-emphasis fs-2">Horaires d'ouverture</h1>
   <div class="col-lg-12">
-    <p class="lead mt-2">Définir les horaires d'ouverture du garage automobile V. Parrot.</p>
+    <p class="lead mt-2">Modifier les horaires d'ouverture du garage automobile V. Parrot.</p>
     
     <!-- <div class="row justify-content-center"> 
 		  		<div class="col-md-4"> -->
@@ -117,3 +120,4 @@
 
 
 <?php require_once __DIR__ . "/templates/footer.php"; ?>
+

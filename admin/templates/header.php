@@ -7,8 +7,8 @@
 	$adminMenu = [
 		  "index.php" => "Accueil",
 		  "generer-employe.php" => "Ajouter un compte employé",
-		  "horaires.php" => "Modifier les horaires d'ouverture"
-
+		  "horaires.php" => "Modifier les horaires d'ouverture",
+		  "services.php" => "Modifier les services proposés"
 	];
 
 ?>

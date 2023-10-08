@@ -58,8 +58,8 @@
 						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 							<span class="navbar-toggler-icon"></span>
 						</button>
-						<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
 						
+						<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
 							<ul class="navbar nav">
 		              <?php foreach ($mainMenu as $page => $titre) { ?>
 		                  <li class="nav-item">
@@ -71,8 +71,8 @@
 		                  </li>
 		              	<?php } ?>
 		          </ul>
-						
 						</div>
+						
 					</div>
 				</nav>
 			
