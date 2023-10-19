@@ -1,7 +1,9 @@
 <?php
 
-	include "../../lib/config.php";
-	include "../../lib/session.php";
+	// include "../../lib/config.php";
+	// include "../../lib/session.php";
+	require_once "../lib/config.php";
+	require_once "../lib/session.php";
 	employeOnly(); 
 
 	$adminMenu = [

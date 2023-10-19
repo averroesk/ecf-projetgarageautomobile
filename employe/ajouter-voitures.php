@@ -26,36 +26,36 @@
     return $query->execute();
 }
 	
-	if (isset($_POST['addCar'])) {
+	if (isset($_POST['addCar']) ) {
 	
 	
-		// Si un fichier est envoyé	
-   	$fileName = null;
-    if (isset($_FILES["file"]) && $_FILES["file"]["error"] === 0) {
-        // $checkImage = getimagesize($_FILES["file"]["tmp_name"]);
-        // var_dump( $_FILES["file"]["type"] );
-        // if ($checkImage !== false) {
-        	var_dump( $_FILES["file"]["type"] == "image/jpeg" );
-        	if ( $_FILES["file"]["type"] == "image/jpeg" || $_FILES["file"]["type"] == "image/png" ) {
-        		//var_dump(true);
-            $fileName = slugify(basename($_FILES["file"]["name"]));
-            $fileName = uniqid() . '-' . $fileName;  
-          	$test = move_uploaded_file($_FILES["file"]["tmp_name"], 
-          														"../images/images-vehicules/" . $fileName);
-            if ($test){
-            	if (isset($_POST['image'])) {
-                    // On supprime l'ancienne image si on a posté une nouvelle
-                    	/* dirname(__DIR__) permet de cibler le 
-                    	dossier parent car on se trouve dans admin. */
-                    unlink(dirname(__DIR__)."/images/images-vehicules/" . $_POST['image']);
-              }
-            } else {
-              	$errors[] = 'Le fichier n\'a pas été uploadé';
-            } 
-        	} else {
-            	$errors[] = 'Le fichier doit être une image';
-        }
-    }
+    if ( isset($_FILES["file"]["tmp_name"]) 
+    		&& $_FILES["file"]["error"] === 0 
+    		&& ( $_FILES["file"]["type"] === "image/jpeg"
+      		|| $_FILES["file"]["type"] === "image/png" ) 
+      	&& getimagesize($_FILES["file"]["tmp_name"]) !== false
+      ) {
+          
+		     	$fileName = slugify(basename($_FILES["file"]["name"]));
+		     	// Renomme le fichier téléchargé
+		      $fileName = round(microtime(true)).mt_rand() . '-' . $fileName;  
+		      $test = move_uploaded_file($_FILES["file"]["tmp_name"], 
+		        														"../images/images-vehicules/" . $fileName);
+        	if ($test){
+          	if (isset($_POST['image'])) {
+            	// On supprime l'ancienne image si on a posté une nouvelle
+              /* dirname(__DIR__) permet de cibler le 
+                 dossier parent car on se trouve dans admin. */
+               unlink(dirname(__DIR__)."/images/images-vehicules/" . $_POST['image']);
+             }
+           } else {
+           	$errors[] = 'Le fichier n\'a pas été uploadé';
+           } 
+       	} else {
+       		$errors[] = 'Le fichier doit être une image';
+       	}
+     
+    	
     
     
      if (!$errors) {

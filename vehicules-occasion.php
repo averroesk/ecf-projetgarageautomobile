@@ -10,8 +10,20 @@
     $query->execute();
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
 		$cars = $result; 
-	
+		
+		require_once __DIR__ . "/lib/session.php";
+		
+		var_dump($_SESSION["user"]["prenom"]);
+		
 		require_once __DIR__ . "/templates/header.php"
+		
+		
+	
+		//require_once __DIR__ . "/templates/header.php"
+		
+		//var_dump($_SESSION["user"]["prenom"]);
+		
+		//var_dump($_SESSION["user"]["prenom"]);
 	
 ?>
 

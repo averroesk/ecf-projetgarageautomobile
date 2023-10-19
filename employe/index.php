@@ -5,6 +5,8 @@
 	employeOnly();
 	
 	require_once __DIR__ . "/templates/header.php"; 
+	
+	var_dump($_SESSION["user"]["prenom"]);
 
 ?>
 

@@ -5,6 +5,8 @@
  	require_once __DIR__ . "/lib/pdo.php"; 
 	require_once __DIR__ . "/lib/session.php"; 
 	require_once __DIR__ . "/templates/header.php"; 
+	
+	var_dump($_SESSION["user"]["prenom"]);
 
 		function verifyCredentials(PDO $pdo, string $email, string $password) {
 		  $query = $pdo->prepare("SELECT * FROM utilisateurs WHERE email = :email");
