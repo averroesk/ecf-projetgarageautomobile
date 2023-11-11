@@ -1,4 +1,4 @@
-#### Voici le diagramme de cas d'utilisation de l'application:
+#### Voici le diagramme de cas d'utilisation représeantant les acteurs et les différentes fonctionnalités de l'application:
 ####
 <img src="diagramme-cas-utilisation.vpd.png" alt="Diagramme de cas d'utilisation" title="Diagramme de cas d'utilisation">
 
