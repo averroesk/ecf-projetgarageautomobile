@@ -1,4 +1,6 @@
-
+#### Voici le diagramme de cas d'utilisation de l'application:
+####
+<img src="diagramme-cas-utilisation.vpd.png" alt="Diagramme de cas d'utilisation" title="Diagramme de cas d'utilisation">
 
 #### Se connecter au compte administrateur:
 - Email: vincentparrot@test.com
