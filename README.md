@@ -2,6 +2,10 @@
 ####
 <img src="diagramme-cas-utilisation.vpd.png" alt="Diagramme de cas d'utilisation" title="Diagramme de cas d'utilisation">
 
+#### Voici le diagramme de classes représentant le modèle relationnel de l’application:
+####
+<img src="diagramme-de-classes.png" alt="Diagramme de cas d'utilisation" title="Diagramme de cas d'utilisation">
+
 #### Se connecter au compte administrateur:
 - Email: vincentparrot@test.com
 - Mot de passe: admin
