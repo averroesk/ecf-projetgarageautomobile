@@ -1,14 +1,20 @@
 #### Demo application web PHP de gestion pour concessionnaire automobile:
 
+<br>
+
 ![Demo](demo-jeu-essai.gif)
+
+<br>
 
 ![Demo](demo-filtre.gif)
 
-#### Voici le diagramme de cas d'utilisation représentant les acteurs et les fonctionnalités de l'application:
+<br>
+
+#### Diagramme de cas d'utilisation représentant les acteurs et les fonctionnalités de l'application:
 ####
 <img src="diagramme-cas-utilisation.vpd.png" alt="Diagramme de cas d'utilisation" title="Diagramme de cas d'utilisation">
 
-#### Voici le diagramme de classes représentant le modèle relationnel de l’application:
+#### Diagramme de classes représentant le modèle relationnel de l’application:
 ####
 <img src="diagramme-de-classes.png" alt="Diagramme de cas d'utilisation" title="Diagramme de cas d'utilisation">
 
