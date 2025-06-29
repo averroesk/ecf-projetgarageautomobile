@@ -1,14 +1,9 @@
-#### Demo application web PHP de gestion pour concessionnaire automobile:
-
-<br>
+#### Demo application:
 
 ![Demo](demo-jeu-essai.gif)
 
 <br>
 
-![Demo](demo-filtre.gif)
-
-<br>
 
 #### Diagramme de cas d'utilisation représentant les acteurs et les fonctionnalités de l'application:
 ####
@@ -17,6 +12,15 @@
 #### Diagramme de classes représentant le modèle relationnel de l’application:
 ####
 <img src="diagramme-de-classes.png" alt="Diagramme de cas d'utilisation" title="Diagramme de cas d'utilisation">
+
+<br>
+
+#### Demo fonctionnalité filtrage véhicules:
+
+![Demo](demo-filtre.gif)
+
+<br>
+
 
 #### Se connecter au compte administrateur:
 - Email: vincentparrot@test.com
