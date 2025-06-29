@@ -1,3 +1,6 @@
+![Demo](demo-jeu-essai.gif)
+
+
 #### Voici le diagramme de cas d'utilisation représentant les acteurs et les fonctionnalités de l'application:
 ####
 <img src="diagramme-cas-utilisation.vpd.png" alt="Diagramme de cas d'utilisation" title="Diagramme de cas d'utilisation">
