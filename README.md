@@ -1,4 +1,4 @@
-#### Demo application:
+#### Demo de l'application:
 
 ![Demo](demo-jeu-essai.gif)
 
