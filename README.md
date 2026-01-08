@@ -2,12 +2,17 @@
 
 <br>
 
-#### Demo de l'application:
+#### Demo application :
 
 ![Demo](demo-jeu-essai.gif)
 
 <br>
 
+#### Demo appication : fonctionnalité filtrage de véhicules (AJAX):
+
+![Demo](demo-filtre.gif)
+
+<br>
 
 #### Diagramme de cas d'utilisation représentant les acteurs et les fonctionnalités de l'application:
 ####
@@ -18,13 +23,6 @@
 <img src="diagramme-de-classes.png" alt="Diagramme de cas d'utilisation" title="Diagramme de cas d'utilisation">
 
 <br>
-
-#### Demo fonctionnalité filtrage véhicules:
-
-![Demo](demo-filtre.gif)
-
-<br>
-
 
 #### Se connecter au compte administrateur:
 - Email: vincentparrot@test.com
