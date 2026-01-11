@@ -1,8 +1,8 @@
-#### Evaluation projet web PHP: logiciel métier de gestion pour concessionnaire automobile.
+### Evaluation projet web PHP: logiciel métier de gestion pour concessionnaire automobile.
 
 <br>
 
-#### Demo application :
+#### Demo présentation application :
 
 ![Demo](demo-jeu-essai.gif)
 
